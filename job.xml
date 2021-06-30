@@ -1,0 +1,18 @@
+<job>
+	<batch name="my batch">
+		<test appname="myapp" testname="mytest">
+			<configuration> 
+				<applitools>applitoolsConf.xml</applitools>
+				<driver>chrome</driver> <!-- Additional options: firefox, safari, ie, edge -->
+				<viewport width="600" height="600"></viewport>
+			</configuration>
+			<execute>
+				<action type="navigate">http://the-internet.herokuapp.com/login</action>
+				<action type="sendkeys" by="css" selector="#username">john.smith@applitools.com</action>
+				<action type="sendkeys" by="css" selector="#password">12345</action>
+				<action type="click" by="css" selector="#login > button > i"></action>
+				<action type="checkwindow">step name</action>
+			</execute>
+		</test>
+	</batch>
+</job>
